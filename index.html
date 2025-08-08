@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>    
+  <meta charset="UTF-8" />    
+  <meta name="viewport" content="width=device-width, initial-scale=1" />    
+  <title>🎬 Rockstar Cinemas</title>    
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />    
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Bebas+Neue&display=swap" rel="stylesheet" />    
+  <style>    
+    body {    
+      background: linear-gradient(120deg, #000000, #1a0033, #000033);    
+      color: #fff;    
+      font-family: 'Orbitron', sans-serif;    
+    }
+
+    /* === NAVBAR === */    
+    .navbar {    
+      background-color: #1a0033;    
+      box-shadow: 0 0 10px #5500ff;    
+    }    
+    .navbar-brand,
+    .nav-link {
+      color: #00ccff !important;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #aa00ff !important;
+    }
+
+    header {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      filter: brightness(60%) contrast(120%);
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      top: 40%;
+      text-shadow: 0 0 20px #aa00ff;
+    }
+
+    .hero-text h1 {
+      font-size: 4rem;
+      font-family: 'Bebas Neue', cursive;
+      letter-spacing: 6px;
+      color: #00ccff;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ccff, 0 0 20px #5500ff;
+      }
+      to {
+        text-shadow: 0 0 20px #aa00ff, 0 0 30px #5500ff;
+      }
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #ccc;
+    }
+
+    .btn-trailer {
+      background: linear-gradient(to right, #5500ff, #00ccff);
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      font-size: 18px;
+      margin-top: 20px;
+      border-radius: 30px;
+      transition: 0.4s ease;
+    }
+
+    .btn-trailer:hover {
+      background: linear-gradient(to right, #aa00ff, #5500ff);
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #aa00ff;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      color: #aa00ff;
+      text-align: center;
+      margin: 50px 0 30px;
+      font-family: 'Bebas Neue', cursive;
+      text-shadow: 0 0 8px #5500ff;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #0a0a0a, #1a0033);
+      color: white;
+      border: 1px solid #220033;
+      transition: 0.4s;
+      border-radius: 12px;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 25px #5500ff;
+    }
+
+    .card-img-top {
+      height: 750px;
+      object-fit: cover;
+    }
+
+    .cast-slider img {
+      height: 150px;
+      width: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 12px;
+      border: 3px solid #00ccff;
+      transition: transform 0.3s;
+    }
+
+    .cast-slider img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 20px #aa00ff;
+    }
+
+    footer {
+      background-color: #0d0d0d;
+      padding: 20px 0;
+      text-align: center;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+  </style>    
+</head>    
+<body>  
+<!-- === NAVBAR === -->  
+<nav class="navbar navbar-expand-lg">    
+  <div class="container">    
+    <a class="navbar-brand" href="#">🎬 Rockstar Cinemas</a>    
+    <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">    
+      <span class="navbar-toggler-icon"></span>    
+    </button>    
+    <div class="collapse navbar-collapse justify-content-end" id="mainNav">    
+      <ul class="navbar-nav">    
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>    
+        <li class="nav-item"><a class="nav-link" href="#">Now Showing</a></li>    
+        <li class="nav-item"><a class="nav-link" href="#">Coming Soon</a></li>    
+        <li class="nav-item"><a class="nav-link" href="#">Book Tickets</a></li>    
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>    
+      </ul>    
+    </div>    
+  </div>    
+</nav>  
+
+<!-- === HERO SECTION === -->  
+<header>    
+  <video autoplay muted loop>    
+    <source src="https://cdn.pixabay.com/vimeo/226252680/cinema-7727.mp4?width=1280&hash=5e44994e8727c83c8ac2f541d70833fc93521c13" type="video/mp4">    
+    Your browser does not support the video tag.    
+  </video>    
+  <div class="hero-text">    
+    <h1>🎸 Rockstar Cinemas</h1>    
+    <p>Where stories roar in lights and sound!</p>    
+    <button class="btn-trailer" onclick="showTrailer()">▶ Watch Trailer</button>    
+  </div>    
+</header>  
+
+<!-- === FEATURED MOVIES === -->  
+<section class="container">    
+  <h2 class="section-title">🎥 Featured Movies</h2>    
+  <div class="row g-4">    
+    <div class="col-md-4">    
+      <div class="card">    
+        <img src="C:\html\str.jpg" class="card-img-top" alt="Movie 1" />    
+        <div class="card-body">    
+          <h5 class="card-title">Beast Mode</h5>    
+          <p class="card-text">An explosive ride of a lone warrior who defies the dark system.</p>    
+        </div>    
+      </div>    
+    </div>    
+    <div class="col-md-4">    
+      <div class="card">    
+        <img src="C:\html\aliya.jpg" class="card-img-top" alt="Movie 2" />    
+        <div class="card-body">    
+          <h5 class="card-title">Love Reborn</h5>    
+          <p class="card-text">A heart-touching tale of two souls reconnecting through fate.</p>    
+        </div>    
+      </div>    
+    </div>    
+    <div class="col-md-4">    
+      <div class="card">    
+        <img src="C:\html\ranvir.jpg" class="card-img-top" alt="Movie 3" />    
+        <div class="card-body">    
+          <h5 class="card-title">Dark Empire</h5>    
+          <p class="card-text">When galaxies fall, a rebel must rise against all odds.</p>    
+        </div>    
+      </div>    
+    </div>    
+  </div>    
+</section>  
+
+<!-- === CAST SECTION === -->  
+<section class="container">    
+  <h2 class="section-title">🌟 Cast & Crew</h2>    
+  <div class="d-flex justify-content-center cast-slider overflow-auto py-3">    
+    <img src="C:\html\eye.jpg" alt="Cast 1" />    
+    <img src="C:\html\s1.jpg" alt="Cast 2" />    
+    <img src="C:\html\eye.jpg" alt="Cast 3" />    
+    <img src="C:\html\bl.jpg" alt="Cast 4" />      
+    <img src="C:\html\s1.jpg" alt="Cast 5" />    
+  </div>    
+</section>  
+
+<!-- === TRAILER MODAL === -->  
+<div class="modal fade" id="trailerModal" tabindex="-1" aria-labelledby="trailerLabel" aria-hidden="true">    
+  <div class="modal-dialog modal-dialog-centered modal-lg">    
+    <div class="modal-content bg-dark">    
+      <div class="modal-header border-0">    
+        <h5 class="modal-title text-white" id="trailerLabel">🎬 Official Trailer</h5>    
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>    
+      </div>    
+      <div class="modal-body">    
+        <div class="ratio ratio-16x9">    
+          <iframe id="trailerVideo" src="" title="YouTube video" allowfullscreen></iframe>    
+        </div>    
+      </div>    
+    </div>    
+  </div>    
+</div>  
+
+<!-- === FOOTER === -->  
+<footer>    
+  <p>© 2025 Rockstar Cinemas | Designed with 🍿 by <strong>Enitha Priyadharshini</strong> 💜💙🖤</p>    
+</footer>  
+
+<!-- === BOOTSTRAP & SCRIPT === -->  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  
+<script>    
+  function showTrailer() {    
+    const modal = new bootstrap.Modal(document.getElementById('trailerModal'));    
+    const video = document.getElementById("trailerVideo");    
+    video.src = "https://www.youtube.com/embed/d96cjJhvlMA?autoplay=1";    
+    modal.show();    
+    document.getElementById('trailerModal').addEventListener('hidden.bs.modal', () => {    
+      video.src = "";    
+    });    
+  }
+</script>  
+</body>    
+</html>
